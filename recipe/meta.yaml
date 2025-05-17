@@ -1,5 +1,5 @@
 {% set name = "durationpy" %}
-{% set version = "0.9" %}
+{% set version = "0.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/durationpy-{{ version }}.tar.gz
-  sha256: fd3feb0a69a0057d582ef643c355c40d2fa1c942191f914d12203b1a01ac722a
+  sha256: 1fa6893409a6e739c9c72334fc65cca1f355dbdd93405d30f726deb5bde42fba
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
