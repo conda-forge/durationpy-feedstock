@@ -1,0 +1,44 @@
+schema_version: 1
+
+context:
+  version: "0.11"
+
+package:
+  name: durationpy
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/d/durationpy/durationpy-${{ version }}.tar.gz
+  sha256: 181898e1ae282e288f0a2291829656bf1b6b3aadf30a97993b85db4943642905
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - durationpy
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Module for converting between datetime.timedelta and Go's Duration strings.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/icholy/durationpy
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
