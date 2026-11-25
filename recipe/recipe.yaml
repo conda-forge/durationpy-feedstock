@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.11"
+  version: "0.12"
 
 package:
   name: durationpy
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/durationpy/durationpy-${{ version }}.tar.gz
-  sha256: 181898e1ae282e288f0a2291829656bf1b6b3aadf30a97993b85db4943642905
+  sha256: 03e8223034b4a874c1c0022672aead4e6d7ed792bb418be3c5616f6494eb14cc
 
 build:
   number: 0
